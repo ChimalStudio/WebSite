@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Chimal Studio – Digital Transformation for Chemical &amp; Pharma</title>
@@ -59,15 +58,17 @@
     #hero {
       min-height: 100vh;
       background: var(--navy);
-      padding-top: 8rem;
-      padding-bottom: 4rem;
+      display: flex;
+      align-items: center;
+      padding-top: 80px; /* nav height offset */
       position: relative; overflow: hidden;
     }
     .hero-inner {
       max-width: 1200px; margin: 0 auto;
-      padding: 0 4rem;
+      padding: 4rem;
+      width: 100%;
       display: grid; grid-template-columns: 1fr 1fr;
-      align-items: center; height: 100%;
+      align-items: center;
     }
     #hero::before {
       content: ''; position: absolute; inset: 0;
@@ -300,7 +301,7 @@
     @media (max-width: 900px) {
       .nav-inner { padding: 1rem 1.5rem; }
       .nav-links { gap: 1.5rem; }
-      .hero-inner { grid-template-columns: 1fr; padding: 0 1.5rem; }
+      .hero-inner { grid-template-columns: 1fr; padding: 2rem 1.5rem; }
       .hero-visual { display: none; }
       #about { grid-template-columns: 1fr; gap: 2rem; padding: 5rem 1.5rem; }
       .section-number { display: none; }
