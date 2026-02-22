@@ -36,11 +36,14 @@
     /* NAV */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 1.2rem 4rem;
       background: rgba(255,255,255,0.94);
       backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.2rem 4rem;
     }
     .nav-logo { text-decoration: none; }
     .nav-links { display: flex; gap: 2.5rem; list-style: none; }
@@ -55,10 +58,15 @@
     #hero {
       min-height: 100vh;
       background: var(--navy);
-      display: grid; grid-template-columns: 1fr 1fr;
-      align-items: center;
-      padding: 8rem 4rem 4rem;
+      padding-top: 8rem;
+      padding-bottom: 4rem;
       position: relative; overflow: hidden;
+    }
+    .hero-inner {
+      max-width: 1200px; margin: 0 auto;
+      padding: 0 4rem;
+      display: grid; grid-template-columns: 1fr 1fr;
+      align-items: center; height: 100%;
     }
     #hero::before {
       content: ''; position: absolute; inset: 0;
@@ -289,9 +297,9 @@
 
     /* RESPONSIVE */
     @media (max-width: 900px) {
-      nav { padding: 1rem 1.5rem; }
+      .nav-inner { padding: 1rem 1.5rem; }
       .nav-links { gap: 1.5rem; }
-      #hero { grid-template-columns: 1fr; padding: 7rem 1.5rem 4rem; }
+      .hero-inner { grid-template-columns: 1fr; padding: 0 1.5rem; }
       .hero-visual { display: none; }
       #about { grid-template-columns: 1fr; gap: 2rem; padding: 5rem 1.5rem; }
       .section-number { display: none; }
@@ -310,30 +318,33 @@
 
   <!-- NAV -->
   <nav>
-    <a class="nav-logo" href="#">
-      <img src="assets/Chimal_Sudio.png" alt="Chimal Studio" style="height:36px;width:auto;" />
-    </a>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+    <div class="nav-inner">
+      <a class="nav-logo" href="#">
+        <img src="assets/Chimal_Sudio.png" alt="Chimal Studio" style="height:36px;width:auto;" />
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
   </nav>
 
-  <!-- HERO -->
   <section id="hero">
-    <div class="hero-content">
-      <div class="hero-tag">Independent IT Consultant</div>
-      <h1>Digital <em>Transformation</em><br>for Chemical &amp; Pharma</h1>
-      <p class="hero-sub">Bridging 15+ years of scientific expertise with enterprise IT knowledge to guide organisations through smart, compliant, and lasting digitalisation.</p>
-      <div class="hero-cta">
-        <a href="#services" class="btn btn-primary">Explore Services</a>
-        <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-tag">Independent IT Consultant</div>
+        <h1>Digital <em>Transformation</em><br>for Chemical &amp; Pharma</h1>
+        <p class="hero-sub">Bridging 15+ years of scientific expertise with enterprise IT knowledge to guide organisations through smart, compliant, and lasting digitalisation.</p>
+        <div class="hero-cta">
+          <a href="#services" class="btn btn-primary">Explore Services</a>
+          <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+        </div>
       </div>
-    </div>
-    <div class="hero-visual">
-      <img src="assets/Chimal_Logo_white.png" alt="" aria-hidden="true"
-           style="width:100%;max-width:340px;filter:drop-shadow(0 8px 48px rgba(201,168,48,0.2));" />
+      <div class="hero-visual">
+        <img src="assets/Chimal_Logo_white.png" alt="" aria-hidden="true"
+             style="width:100%;max-width:340px;filter:drop-shadow(0 8px 48px rgba(201,168,48,0.2));" />
+      </div>
     </div>
   </section>
 
@@ -436,13 +447,13 @@
         <h2>Let's talk about your digitalisation challenge</h2>
         <p>Whether you're starting a new initiative or need an independent perspective on an existing one, I'm happy to have a first conversation.</p>
         <div class="contact-links">
-          <a href="mailto:info@chimal.studio" class="contact-link">
+          <a href="/cdn-cgi/l/email-protection#c8a1a6aea788aba0a1a5a9a4e6bbbcbdaca1a7" class="contact-link">
             <div class="contact-link-icon">
               <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
             </div>
             <div>
               <span class="contact-link-label">Email</span>
-              <span class="contact-link-value">info@chimal.studio</span>
+              <span class="contact-link-value"><span class="__cf_email__" data-cfemail="442d2a222b04272c2d2925286a373031202d2b">[email&#160;protected]</span></span>
             </div>
           </a>
           <a href="tel:+390444149797" class="contact-link">
@@ -472,7 +483,7 @@
     <span class="footer-copy">&copy; 2025 Gottardo Gianni &mdash; All rights reserved</span>
   </footer>
 
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     // Scroll-reveal: add hidden first, then remove on intersection
     const revealEls = document.querySelectorAll('.reveal');
     revealEls.forEach(el => el.classList.add('hidden'));
@@ -484,12 +495,4 @@
             io.unobserve(e.target);
           }
         });
-      }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
-      revealEls.forEach(el => io.observe(el));
-    } else {
-      // Fallback: show everything immediately
-      revealEls.forEach(el => el.classList.remove('hidden'));
-    }
-  </script>
-</body>
-</html>
+      }, { threshold: 0.08
